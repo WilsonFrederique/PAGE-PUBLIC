@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERS</title>
+
+    <!-- -------------- Boxicon ---------------- -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- -------------- Mon css ---------------- -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<style>
+    .place-en-tete-contact{
+        width: 100%;
+        min-height: 470px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background-image: url(../assets/images/Fond1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    /* Pou bon liste des choix en Nav */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: var(--white-color);
+        width: 100%; /* Adapte la largeur du dropdown à celle du parent (li) */
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: var(--primary-color);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+        text-align: center; /* Centrer le texte */
+        width: 100%; /* Assure que les liens occupent toute la largeur */
+    }
+
+    /* Afficher le dropdown lors du survol */
+    li:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+    }
+
+    /* Appliquer une largeur égale au bouton Connexion */
+    li {
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+    }
+    
+    a.btn-top {
+        width: 160px;
+        display: block;
+        text-align: center;
+    }
+    
+    
+    /* Pou bon liste des choix en Header */
+    .groop-btn {
+        position: relative;
+        display: inline-block;
+        width: 10rem;
+        text-align: center;
+    }
+
+    .dropdown-content2 {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content2 a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        min-width: 100%; /* La largeur minimum est égale à celle du conteneur parent */
+    }
+
+    .groop-btn:hover .dropdown-content2 {
+        display: block;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.75rem 1rem;
+        border-radius: 0.4rem;
+        color: var(--white-color);
+        background: var(--secondary-color);
+        cursor: pointer;
+        transition: all 400ms ease;
+        width: 100%; /* Le bouton "Connexion" remplit la largeur de son conteneur */
+    }
+
+    .btn-top {
+        width: 100%; /* Assurez-vous que ce bouton prend toute la largeur disponible */
+    }
+
+    .dropdown-content2 a {
+        width: 100%; /* Alignement de la largeur des éléments de la liste */
+        background-color: #fff;
+        text-align: center;
+        color: var(--primary-color);
+        transition: all 400ms ease;
+    }
+
+    .dropdown-content2 a:hover {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+    }
+
+</style>
+
+<body>
+    
+    <!-- ============================= NAV ============================= -->
+    <nav class="grandientBackground">
+        <div class="container">
+            <a href="#" class="nav__logo ensemble-logo-txt">
+                <img class="logo" src="assets/images/logo1.png" alt="Logo">
+                <h3>REGION ANOSY</h3>
+            </a>
+
+            <ul id="nav__items">
+                <li><a href="#" class="color-nav">Accueil</a></li>
+                <li><a href="#services" class="color-nav">Services</a></li>
+                <li><a href="#specialists" class="color-nav">Employées</a></li>
+                <li><a href="#testimonials" class="color-nav">Randez-vous</a></li>
+                <li><a href="#appointement" class="color-nav">Pointages</a></li>
+                <li><a href="#contact" class="color-nav">Contact</a></li>
+                <!-- <li><a href="#appointement" class="btn">Appointement</a></li> -->
+                <li>
+                    <a href="" class="btn-top">Connexion</a>
+                    <div class="dropdown-content">
+                        <a href="#">Utilisateur</a>
+                        <a href="#">Administrateur</a>
+                    </div>
+                </li>
+            </ul>
+
+            <button id="open__nav-btn"><i class='bx bx-menu'></i></button>
+            <button id="close__nav-btn"><i class='bx bx-x' ></i></button>
+        </div>
+    </nav>
+
+    <!-- ========================= Header ============================= -->
+    <header>
+        <div class="container">
+            <div class="header__content">
+                <h1>FARITRA ANOSY MIASA HO ANAO</h1>
+                <p>Fagnoitsy amy gny fampivoara aty atsimo <br> "Levier de l'emmergence économique du sud"</p>
+                <div class="groop-btn">
+                    <a href="#appointement" class="btn">Connexion</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Utilisateur</a>
+                        <a href="#">Administrateur</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header__image">
+                <img src="assets/images/header1.svg" alt="Header Image">
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================= Services ============================= -->
+    <section id="services">
+        
+        <div class="en-tete-services">
+            <h2>Services</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+        
+        <div class="container">
+            <article>
+                <i class='bx bx-book-content'></i>
+                <div>
+                    <h4>Online Booking</h4>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero hic odio corporis. 
+                    Nihil cupiditate vitae molestias in possimus tempora porro quam blanditiis.</small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bx-book-content'></i>
+                <div>
+                    <h4>Online Booking</h4>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero hic odio corporis. 
+                    Nihil cupiditate vitae molestias in possimus tempora porro quam blanditiis.</small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bx-book-content'></i>
+                <div>
+                    <h4>Online Booking</h4>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero hic odio corporis. 
+                    Nihil cupiditate vitae molestias in possimus tempora porro quam blanditiis.</small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bx-book-content'></i>
+                <div>
+                    <h4>Online Booking</h4>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero hic odio corporis. 
+                    Nihil cupiditate vitae molestias in possimus tempora porro quam blanditiis.</small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bx-book-content'></i>
+                <div>
+                    <h4>Online Booking</h4>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero hic odio corporis. 
+                    Nihil cupiditate vitae molestias in possimus tempora porro quam blanditiis.</small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bx-book-content'></i>
+                <div>
+                    <h4>Online Booking</h4>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis libero hic odio corporis. 
+                    Nihil cupiditate vitae molestias in possimus tempora porro quam blanditiis.</small>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- ========================= Gouverneur ========================= -->
+    <section id="specialists1">
+        <div class="en-tete-services">
+            <h2>MADAME LA GOUVERNEUR DE LA REGION ANOSY</h2>
+            <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi ab porro explicabo.</p> -->
+        </div>
+        <div class="container">
+
+            <article>
+                <div class="specialist__image">
+                    <img class="ig" src="assets/images/Mm.jpg" alt="Specialist4">
+                </div>
+                <div class="specialist__details">
+                    <h4>MADAME LA GOUVERNEUR DE LA REGION ANOSY</h4>
+                    <small>  </small>
+                </div>
+                <div class="specialist__socials">
+                    <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                </div>
+                <div class="specialist__photos">
+                    <h3>MOTS DU GOUVERNEUR</h3>
+                    <p class="mot-du-gvrnr">
+                        Dotée d’opportunités économiques considérables et présentant de multiples atouts, 
+                        la région Anôsy se profile comme une destination de choix pour les investisseurs 
+                        souhaitant catalyser le développement économique du Sud de Madagascar. Dans cette 
+                        perspective, nous encourageons la promotion de l’économie verte et bleue, mettant 
+                        l’accent sur le développement des filières d’exportation et la création d’unités 
+                        industrielles spécialisées dans la transformation, en exploitant les atouts naturels 
+                        distinctifs de la région. À cet effet, nous nous engageons à faciliter les opérations 
+                        des investisseurs et des porteurs de projets dans la région Anôsy, en assurant un 
+                        environnement propice aux affaires, notamment en créant des conditions favorables au 
+                        lancement et à la dynamisation de leurs initiatives. En plus de la richesse de nos 
+                        ressources en matières premières issues de notre terroir, la présence d’un port en eau 
+                        profonde aux normes internationales et de la zone d’investissement industriel d’Ehoala 
+                        Park constituent un avantage indéniable, facilitant le processus, depuis le stockage jusqu’à 
+                        l’exportation des produits transformés. La proximité d’un aéroport international et les 
+                        améliorations en cours des axes routiers majeurs (RN13 et RN12A) sont également des éléments 
+                        favorables à tout investissement, favorisant par ailleurs le développement du secteur 
+                        touristique dans la région. Engagée dans sa mission de devenir le fer de lance de l’émergence 
+                        économique du Sud de Madagascar, la région Anôsy s’engage à concrétiser les défis énoncés 
+                        dans le Plan Régional de Développement (PRD) et à suivre la politique émergente de décentralisation, 
+                        tout en promouvant les 12 pôles de croissance. Ainsi, nous lançons un appel à l’échelle mondiale, 
+                        invitant tous les acteurs à se joindre à nous pour découvrir la richesse culturelle, la gastronomie, 
+                        la biodiversité et toutes les merveilles offertes par la Région. Cet appel reflète notre vision de développement, 
+                        visant à une croissance économique et un progrès social, dans le but ultime d’offrir à la prochaine génération 
+                        l’héritage d’une région prospère. Nous vous souhaitons une exploration enrichissante de notre région à travers ce site.
+                    </p>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=261344596117" class="specialist__whatsapp" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+            </article>
+            
+        </div>
+    </section>
+
+    <!-- ========================= Specialistes ========================= -->
+    <section id="specialists">
+        <div class="en-tete-services">
+            <h2>LES EMPLOYEES</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi ab porro explicabo.</p>
+        </div>
+        <div class="container">
+
+            <article>
+                <div class="specialist__image">
+                    <img class="ig" src="assets/images/Mm.jpg" alt="Specialist4">
+                </div>
+                <div class="specialist__details">
+                    <h4>Dr Wilson Frederique</h4>
+                    <small>Développeur Full Stack</small>
+                </div>
+                <div class="specialist__socials">
+                    <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=261344596117" class="specialist__whatsapp" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+            </article>
+
+            <article>
+                <div class="specialist__image">
+                    <img src="assets/images/img2.JPG" alt="Specialist2">
+                </div>
+                <div class="specialist__details">
+                    <h4>Dr Wilson Frederique</h4>
+                    <small>Développeur Full Stack</small>
+                </div>
+                <div class="specialist__socials">
+                    <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=261388499982" class="specialist__whatsapp" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+            </article>
+            
+            <article>
+                <div class="specialist__image">
+                    <img src="assets/images/img3.JPG" alt="Specialist3">
+                </div>
+                <div class="specialist__details">
+                    <h4>Dr Wilson Frederique</h4>
+                    <small>Développeur Full Stack</small>
+                </div>
+                <div class="specialist__socials">
+                    <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                </div>
+                <a href="https://api.whatsapp.com/send?=+261388499982" class="specialist__whatsapp" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
+            </article>
+            
+            <article>
+                <div class="specialist__image">
+                    <img src="assets/images/img1.JPG" alt="Specialist1">
+                </div>
+                <div class="specialist__details">
+                    <h4>Dr Wilson Frederique</h4>
+                    <small>Développeur Full Stack</small>
+                </div>
+                <div class="specialist__socials">
+                    <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                </div>
+                <a href="https://api.whatsapp.com/send?=+261388499982" class="specialist__whatsapp" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
+            </article>
+            
+            <article>
+                <div class="specialist__image">
+                    <img src="assets/images/img5.JPG" alt="Specialist5">
+                </div>
+                <div class="specialist__details">
+                    <h4>Dr Wilson Frederique</h4>
+                    <small>Développeur Full Stack</small>
+                </div>
+                <div class="specialist__socials">
+                    <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                </div>
+                <a href="https://api.whatsapp.com/send?=+261388499982" class="specialist__whatsapp" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
+            </article>
+            
+            <article>
+                <div class="specialist__image">
+                    <img src="assets/images/img6.JPG" alt="Specialist6">
+                </div>
+                <div class="specialist__details">
+                    <h4>Dr Wilson Frederique</h4>
+                    <small>Développeur Full Stack</small>
+                </div>
+                <div class="specialist__socials">
+                    <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                </div>
+                <a href="https://api.whatsapp.com/send?=+261388499982" class="specialist__whatsapp" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
+            </article>
+            
+        </div>
+    </section>
+
+    <!-- ========================= Testimonials ========================= -->
+    <section id="testimonials" class="swiper mySwiper">
+        <div class="en-tete-services">
+            <h2>RANDEZ - VOUS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quia cum, totam repellat non quod?</p>
+        </div>
+
+        <div class="swiper-wrapper">
+            <article class="swiper-slide">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Ratione voluptas quasi ducimus dignissimos explicabo unde corporis, ut inventore.
+                </p>
+                <div class="patient">
+                    <div class="avatar">
+                        <img src="assets/images/images (3).png" alt="avatar">
+                    </div>
+                    <div class="patient-details">
+                        <h5>Walle Fred</h5>
+                        <small>Patient</small>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Ratione voluptas quasi ducimus dignissimos explicabo unde corporis, ut inventore.
+                </p>
+                <div class="patient">
+                    <div class="avatar">
+                        <img src="assets/images/images (3).png" alt="avatar">
+                    </div>
+                    <div class="patient-details">
+                        <h5>Walle Fred</h5>
+                        <small>Patient</small>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Ratione voluptas quasi ducimus dignissimos explicabo unde corporis, ut inventore.
+                </p>
+                <div class="patient">
+                    <div class="avatar">
+                        <img src="assets/images/images (3).png" alt="avatar">
+                    </div>
+                    <div class="patient-details">
+                        <h5>Walle Fred</h5>
+                        <small>Patient</small>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Ratione voluptas quasi ducimus dignissimos explicabo unde corporis, ut inventore.
+                </p>
+                <div class="patient">
+                    <div class="avatar">
+                        <img src="assets/images/images (3).png" alt="avatar">
+                    </div>
+                    <div class="patient-details">
+                        <h5>Walle Fred</h5>
+                        <small>Patient</small>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Ratione voluptas quasi ducimus dignissimos explicabo unde corporis, ut inventore.
+                </p>
+                <div class="patient">
+                    <div class="avatar">
+                        <img src="assets/images/images (3).png" alt="avatar">
+                    </div>
+                    <div class="patient-details">
+                        <h5>Walle Fred</h5>
+                        <small>Patient</small>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Ratione voluptas quasi ducimus dignissimos explicabo unde corporis, ut inventore.
+                </p>
+                <div class="patient">
+                    <div class="avatar">
+                        <img src="assets/images/images (3).png" alt="avatar">
+                    </div>
+                    <div class="patient-details">
+                        <h5>Walle Fred</h5>
+                        <small>Patient</small>
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Ratione voluptas quasi ducimus dignissimos explicabo unde corporis, ut inventore.
+                </p>
+                <div class="patient">
+                    <div class="avatar">
+                        <img src="assets/images/images (3).png" alt="avatar">
+                    </div>
+                    <div class="patient-details">
+                        <h5>Walle Fred</h5>
+                        <small>Patient</small>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- ============================ Contact =========================== -->
+    <section id="contact">
+        <div class="container">
+            <div class="place-en-tete-contact">
+                <div class="en-tete-contacte-txt">
+                    <div class="txt">
+                        <h2>CONTACT</h2>
+                        <p class="txt2">
+                            Veuillez contacter la Région Anosy
+                        </p>
+                    </div>
+                    <p>
+                        <div class="btn-choix-contacte">
+                            <a class="border-btn-contacte" href="#contact">Contacter</a>
+                            <a class="border-btn-contacte" href="#appointement">Messages ou Conseilles</a>
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <article class="contact-region">
+                <div class="ensemble">
+                    <div class="img-email">
+                        <img class="taille-img-contact" src="assets/images/Email.png" alt="">
+                    </div>
+                    <div class="txt-email">
+                        <h4>MAIL DE LA REGION ANOSY</h4>
+                        <p>faritranosy@gmail.com</p>
+                    </div>
+                </div>
+                <div class="ensemble">
+                    <div class="img-contact">
+                        <img class="taille-img-contact" src="assets/images/contact.png" alt="">
+                    </div>
+                    <div class="txt-contact">
+                        <h4>TELEPHONE DE LA REGION ANOSY</h4>
+                        <p>+261 34 80 571 81</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ========================= Appointement ========================= -->
+    <section id="appointement">
+        <div class="container">
+            <div class="info txt-appointement">
+                <h2>MESSAGES</h2>
+                <p>
+                    Resteze-connecté avec la région anôsy <span> ou </span> Veuillez contacter : <a href="#contact" class="color-lien">Cliquez ici pour nous contacter.</a>
+                    <br> <strong> Message public récent </strong> ( Veuillez remplir ces champs pour votre message. ) 
+                </p>
+
+                <article>
+                    <div class="info__icon">
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="txt-appointement">
+                        <h4>Nom et Prenom</h4>
+                        <small>
+                            <div class="date-prive-public">
+                                <div class="dat">
+                                    03-07-2024
+                                </div>
+                                <div class="prv-pbl">
+                                    Message public
+                                </div>
+                            </div>
+                            <div class="message">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, doloremque minus molestias, 
+                                ducimus aliquam ullam aut optio ex distinctio accusantium eveniet expedita atque quasi tempore.
+                            </div>
+                        </small>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="info__icon">
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="txt-appointement">
+                        <h4>Nom et Prenom</h4>
+                        <small>
+                            <div class="date-prive-public">
+                                <div class="dat">
+                                    03-07-2024
+                                </div>
+                                <div class="prv-pbl">
+                                    Message public
+                                </div>
+                            </div>
+                            <div class="message">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, doloremque minus molestias, 
+                                ducimus aliquam ullam aut optio ex distinctio accusantium eveniet expedita atque quasi tempore.
+                            </div>
+                        </small>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="info__icon">
+                        <i class='bx bx-user'></i>
+                    </div>
+                    <div class="txt-appointement">
+                        <h4>Nom et Prenom</h4>
+                        <small>
+                            <div class="date-prive-public">
+                                <div class="dat">
+                                    03-07-2024
+                                </div>
+                                <div class="prv-pbl">
+                                    Message public
+                                </div>
+                            </div>
+                            <div class="message">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, doloremque minus molestias, 
+                                ducimus aliquam ullam aut optio ex distinctio accusantium eveniet expedita atque quasi tempore.
+                            </div>
+                        </small>
+                    </div>
+                </article>
+
+                <a href="#appointement" class="btn-message-bottom">Message</a>
+
+            </div>
+
+            <form action="https://formspree.io/f/meojbpgd" method="POST" class="txt-appointement">
+                <div class="form__group">
+                    <label for="nom">Nom et Prenom</label>
+                    <input type="text" name="nom" placeholder="Entrer votre Nom et Prenom" id="nom" required>
+                </div>
+                <div class="form__group">
+                    <label for="num">Numéro Téléphone</label>
+                    <input type="number" name="num" placeholder="Numéro téléphone" id="num" required>
+                </div>
+                <div class="form__group">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" placeholder="Date aujourd'hui" id="date" required>
+                </div>
+                <div class="form__group">
+                    <label for="departement">Type de messages</label>
+                    <select id="departement" name="departement" required>
+                        <option value="Departement 1">Message public</option>
+                        <option value="Departement 2">Message privé</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label for="employes">Sélectionner un employé</label>
+                    <select id="employes" name="employes" required>
+                        <option value="employes 1">Employé 1</option>
+                        <option value="employes 2">Employé 2</option>
+                        <option value="employes 3">Employé 3</option>
+                        <option value="employes 4">Employé 4</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label for="message">Votre Message</label>
+                    <textarea id="message" name="message" placeholder="Ecrivez ici votre message" required></textarea>
+                </div>
+                <input type="submit" value="ENVOYER" class="btn-primary">
+            </form>
+            
+        </div>
+    </section>
+
+
+
+    <!-- ============================ Footer ============================ -->
+    <footer>
+        <div class="container">
+            <article>
+                <a href="#" class="footer__logo">
+                    <div class="footer-logo">
+                        <img class="img-footer" src="assets/images/logo1.png" alt="logoFooter">
+                        <h3>REGION ANOSY</h3>
+                    </div>
+                </a>
+                <P>
+                    FARITRA ANOSY MIASA HO ANAO. <br><br> Fagnoitsy amy gny fampivoara aty atsimo <br><br> Levier de l'emmergence économique du sud
+                </P>
+                <div>
+                    <i class='bx bx-phone'></i>
+                    <small>+261 34 80 571 81</small>
+                </div>
+                <div>
+                    <i class='bx bx-mail-send'></i>
+                    <small>faritranosy@gmail.com</small>
+                </div>
+            </article>
+
+            <article>
+                <h3>Support</h3>
+                <a href="#">Previce Police</a>
+                <a href="#">Cookie Police</a>
+                <a href="#">Purshasing Police</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Career</a>
+            </article>
+
+            <article>
+                <h3>Menu</h3>
+                <a href="#">Accueil</a>
+                <a href="#services">Services</a>
+                <a href="#specialists">Employées</a>
+                <a href="#testimonials">Randez-vous</a>
+                <a href="#contact" class="btn-primary">Contact</a>
+            </article>
+
+            
+            <article>
+                <h3>Contact de la Région</h3>
+                <p>Mail : faritranosy@gmail.com</p>
+                <p>Téléphone : +261 34 80 571 81</p>
+                <div class="footer__socials">
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                </div>
+            </article>
+        </div>
+        <div class="copyright">
+            <small>&copy; Droits d'auteur Région Anosy :</small>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- ---------------- Mon Js --------------- -->
+    <script src="assets/script/script.js"></script>
+</body>
+</html>
